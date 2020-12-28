@@ -1,0 +1,41 @@
+.status {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.avatar {
+  margin-right: 20px;
+}
+.name {
+  margin: 0;
+  color: gray;
+}
+
+.online {
+  composes: status;
+  background-color: rgb(0, 255, 0);
+}
+.offline {
+  composes: status;
+  background-color: rgb(77, 77, 77);
+}
+.item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 10px auto;
+  padding: 10px;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.42);
+  border-radius: 5px;
+}
+.item:hover,
+.item:focus {
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.71);
+  background-color: rgba(171, 97, 255, 0.877);
+}
+
+.item:hover > .name,
+.item:focus > .name {
+  color: rgb(240, 255, 37);
+}

@@ -1,0 +1,94 @@
+.profile {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 500px;
+  margin: 20px;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.42);
+  border-radius: 5px;
+}
+
+.profile:hover,
+.profile:focus {
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.71);
+}
+
+.description {
+  padding: 10px 0 0;
+  color: rgb(98, 98, 100);
+}
+
+.avatar {
+  display: block;
+}
+
+.name {
+  display: block;
+  text-align: center;
+}
+.name:hover,
+.name:focus {
+  color: #000000;
+}
+
+.tag {
+  display: block;
+  text-align: center;
+}
+.tag:hover,
+.tag:focus {
+  color: #000000;
+}
+
+.location {
+  display: block;
+  text-align: center;
+}
+.location:hover,
+.location:focus {
+  color: #000000;
+}
+
+.stats {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 50px;
+  width: inherit;
+  color: rgb(98, 98, 100);
+  background-color: rgb(217, 194, 255);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.stats > li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.stats > li:first-child {
+  border-bottom-left-radius: 5px;
+}
+
+.stats > li:last-child {
+  border-bottom-right-radius: 5px;
+}
+
+.stats > li:hover,
+.stats > li:focus {
+  color: white;
+  background-color: rgb(150, 85, 255);
+}
+
+.label {
+  margin-right: 2px;
+}
+
+.quantity:not(:last-child) {
+  margin-right: 5px;
+}

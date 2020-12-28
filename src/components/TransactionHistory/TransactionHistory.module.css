@@ -1,0 +1,65 @@
+.transactionHistory {
+  width: 500px;
+  margin: 20px;
+  padding: 0;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.42);
+  border-radius: 5px;
+}
+
+.transactionHistory:hover,
+.transactionHistory:focus {
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.71);
+}
+.tableHead {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 'tableHeader tableHeader tableHeader';
+  background-color: rgb(222, 140, 255);
+  color: #ffffff;
+}
+
+.tableHeader {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ffffff;
+}
+
+.tableBody {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 'type amount currency';
+}
+
+.type {
+  text-align: left;
+  padding: 10px;
+}
+.type:hover,
+.type:focus {
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.42);
+  border-radius: 5px;
+  background-color: rgb(222, 140, 255);
+  color: #ffffff;
+}
+.amount {
+  composes: type;
+}
+.amount:hover,
+.amount:focus {
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.42);
+  border-radius: 5px;
+  background-color: rgb(222, 140, 255);
+  color: #ffffff;
+}
+.currency {
+  composes: type;
+}
+.currency:hover,
+.currency:focus {
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.42);
+  border-radius: 5px;
+  background-color: rgb(222, 140, 255);
+  color: #ffffff;
+}
