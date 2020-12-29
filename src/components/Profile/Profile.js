@@ -1,10 +1,7 @@
 import PropTypes from 'prop-types';
 import s from './Profile.module.css';
 
-const defaultAvatarUrl =
-  'https://www.flaticon.com/svg/static/icons/svg/3135/3135715.svg';
-
-function Profile({ name, tag, location, avatar = defaultAvatarUrl, stats }) {
+function Profile({ name, tag, location, avatar, stats }) {
   return (
     <div className={s.profile}>
       <div className={s.description}>
@@ -32,12 +29,16 @@ function Profile({ name, tag, location, avatar = defaultAvatarUrl, stats }) {
   );
 }
 
+Profile.defaultProps = {
+  avatar: 'https://www.flaticon.com/svg/static/icons/svg/3135/3135715.svg',
+};
+
 Profile.propTypes = {
   name: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
-  stats: PropTypes.objectOf(PropTypes.number.isRequired),
+  avatar: PropTypes.string,
+  stats: PropTypes.objectOf(PropTypes.number.isRequired).isRequired,
 };
 
 export default Profile;

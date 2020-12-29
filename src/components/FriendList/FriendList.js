@@ -19,10 +19,10 @@ function FriendList({ friends }) {
 
 FriendList.propTypes = {
   friends: PropTypes.arrayOf(
-    PropTypes.shape({
+    PropTypes.exact({
       id: PropTypes.number.isRequired,
-    }),
-  ),
+    }).isRequired,
+  ).isRequired,
 };
 
 export default FriendList;

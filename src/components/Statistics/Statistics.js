@@ -2,10 +2,11 @@ import PropTypes from 'prop-types';
 import s from './Statistics.module.css';
 
 function getRandomInt() {
-  const red = Math.floor(Math.random() * Math.floor(255));
-  const green = Math.floor(Math.random() * Math.floor(255));
-  const blue = Math.floor(Math.random() * Math.floor(255));
-  return `rgba(${red}, ${green}, ${blue}, 0.6)`;
+  return Math.floor(Math.random() * Math.floor(255));
+}
+
+function bgColorRandomizer() {
+  return `rgba(${getRandomInt()}, ${getRandomInt()}, ${getRandomInt()}, 0.6)`;
 }
 
 function Statistics({ title, stats }) {
@@ -17,7 +18,7 @@ function Statistics({ title, stats }) {
           <li
             className={s.item}
             key={stat.id}
-            style={{ backgroundColor: getRandomInt() }}
+            style={{ backgroundColor: bgColorRandomizer() }}
           >
             <span className={s.label}>{stat.label}:</span>
             <span className={s.percentage}>{stat.percentage}%</span>
@@ -31,12 +32,12 @@ function Statistics({ title, stats }) {
 Statistics.propTypes = {
   title: PropTypes.string,
   stats: PropTypes.arrayOf(
-    PropTypes.shape({
+    PropTypes.exact({
       id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
       percentage: PropTypes.number.isRequired,
-    }),
-  ),
+    }).isRequired,
+  ).isRequired,
 };
 
 export default Statistics;

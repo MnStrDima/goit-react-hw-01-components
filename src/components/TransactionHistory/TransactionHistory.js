@@ -13,11 +13,13 @@ function TransactionHistory({ items }) {
       </thead>
 
       <tbody>
-        {items.map(item => (
-          <tr className={s.tableBody} key={item.id}>
-            <td className={s.type}>{item.type}</td>
-            <td className={s.amount}>{item.amount}</td>
-            <td className={s.currency}>{item.currency}</td>
+        {items.map(({ id, type, amount, currency }, idx) => (
+          <tr className={idx % 2 === 0 ? s.even : s.odd} key={id}>
+            <td className={s.type}>
+              {type.slice(0, 1).toUpperCase() + type.slice(1).toLowerCase()}
+            </td>
+            <td className={s.amount}>{amount}</td>
+            <td className={s.currency}>{currency}</td>
           </tr>
         ))}
       </tbody>
@@ -27,13 +29,13 @@ function TransactionHistory({ items }) {
 
 TransactionHistory.propTypes = {
   items: PropTypes.arrayOf(
-    PropTypes.shape({
+    PropTypes.exact({
       id: PropTypes.string.isRequired,
       type: PropTypes.string.isRequired,
       amount: PropTypes.string.isRequired,
       currency: PropTypes.string.isRequired,
-    }),
-  ),
+    }).isRequired,
+  ).isRequired,
 };
 
 export default TransactionHistory;

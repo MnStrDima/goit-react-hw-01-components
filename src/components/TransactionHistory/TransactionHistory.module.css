@@ -32,15 +32,25 @@
   grid-template-areas: 'type amount currency';
 }
 
+.even {
+  composes: tableBody;
+  background-color: rgb(231, 255, 166);
+}
+.odd {
+  composes: tableBody;
+  background-color: rgb(166, 237, 255);
+}
+
 .type {
   text-align: left;
   padding: 10px;
+  border: 1px solid #ffffff;
 }
 .type:hover,
 .type:focus {
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.42);
   border-radius: 5px;
-  background-color: rgb(222, 140, 255);
+  background-color: rgb(69, 56, 255);
   color: #ffffff;
 }
 .amount {
@@ -50,7 +60,7 @@
 .amount:focus {
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.42);
   border-radius: 5px;
-  background-color: rgb(222, 140, 255);
+  background-color: rgb(69, 56, 255);
   color: #ffffff;
 }
 .currency {
@@ -60,6 +70,6 @@
 .currency:focus {
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.42);
   border-radius: 5px;
-  background-color: rgb(222, 140, 255);
+  background-color: rgb(69, 56, 255);
   color: #ffffff;
 }
